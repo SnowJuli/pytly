@@ -1,7 +1,6 @@
 from PyInquirer import prompt
 import requests
 
-
 def createBitlink(config):
     questions = [
         {

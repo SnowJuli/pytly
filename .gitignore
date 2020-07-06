@@ -34,3 +34,4 @@ __pypackages__/
 # This Gitignore is made of 
 # https://github.com/github/gitignore/blob/master/Python.gitignore
 # https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
+*.yaml
