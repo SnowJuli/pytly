@@ -1,2 +1,2 @@
-def getInformation():
+def getInformation(config):
     pass

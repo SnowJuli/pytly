@@ -1,2 +1,2 @@
-def expandBitlink():
+def expandBitlink(config):
     pass

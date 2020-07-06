@@ -59,10 +59,10 @@ if __name__ == "__main__":
     action = answers["action"]
 
     if action == "shorten":
-        createBitlink()
+        createBitlink(config)
     elif action == "expand":
-        expandBitlink()
+        expandBitlink(config)
     elif action == "information":
-        getInformation()
+        getInformation(config)
     elif action == "quit":
         pass

@@ -2,7 +2,7 @@ from PyInquirer import prompt
 import requests
 
 
-def createBitlink():
+def createBitlink(config):
     questions = [
         {
             'type': 'input',
@@ -23,7 +23,7 @@ def createBitlink():
     ]
     options = prompt(questions)
     headers = {
-        "Authorization": "Bearer api_token",
+        "Authorization": "Bearer " + config.access_token,
     }
     json = {
         "group_guid": options["group_guid"],
@@ -31,4 +31,8 @@ def createBitlink():
         "long_url": options["long_url"]
     }
     r = requests.post("https://api-ssl.bitly.com/v4/shorten", headers=headers, json=json).json()
-    print(f"Created the Bitlink '{r['link']}' pointing to '{r['long_url']}' and the ID '{r['id']}'")
+    try:
+        print(f"Created the Bitlink '{r['link']}' pointing to '{r['long_url']}' and the ID '{r['id']}'")
+    except KeyError:
+        print("Something went wrong")
+        print(r)
