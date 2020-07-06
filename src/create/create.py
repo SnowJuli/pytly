@@ -1,9 +1,5 @@
-import requests 
-import sys
+import requests
 
 
 def createBitlink():
-    r = requests.post("https://api-ssl.bitly.com/v4/shorten", )
-    
-    
-
+    r = requests.post("https://api-ssl.bitly.com/v4/shorten")
