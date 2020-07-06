@@ -1,0 +1,2 @@
+def getInformation(config):
+    pass
