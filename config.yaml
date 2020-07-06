@@ -1,0 +1,3 @@
+# Used to authenticate every request
+# Keep this token secret!
+access-token: ''

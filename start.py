@@ -1,4 +1,5 @@
 from PyInquirer import prompt
+import configargparse
 
 from src.create.create import createBitlink
 from src.expand.expand import expandBitlink
@@ -7,6 +8,18 @@ from src.information.information import getInformation
 
 print("""Pytly - Made by Snowleoo
 ------------------------------------""")
+
+
+def init_parser():
+    parser = configargparse.ArgParser(
+        config_file_parser_class=configargparse.YAMLConfigFileParser,
+        default_config_files=["config.yaml"],
+        description='CLI application for managing Bit.ly links'
+    )
+    parser.add_argument("-c", "--config-path", is_config_file=True, dest="config_path", help="path to the config file")
+    parser.add_argument("-t", "--access-token", dest="access_token", help="Bit.ly access token")
+    return parser.parse()
+
 
 questions = [
     {
@@ -40,6 +53,8 @@ questions = [
 
 
 if __name__ == "__main__":
+    config = init_parser()
+
     answers = prompt(questions)
     action = answers["action"]
 
