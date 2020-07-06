@@ -15,7 +15,7 @@ def init_parser():
     parser = configargparse.ArgParser(
         config_file_parser_class=configargparse.YAMLConfigFileParser,
         default_config_files=["config.yaml"],
-        description='CLI application for managing Bit.ly links'
+        description='CLI application for managing Bit.ly links.'
     )
     parser.add_argument("-c", "--config-path", is_config_file=True, default="config.yaml", dest="config_path", help="path to the config file")
     parser.add_argument("-t", "--access-token", dest="access_token", help="Bit.ly access token")
