@@ -7,7 +7,7 @@ def expandBitlink(config):
             'type': 'input',
             'name': 'bitlink_id',
             'message': 'ID of the Link you want to expand: ',
-        }
+        },
     ]
     options = prompt(questions)
     headers = {
@@ -18,7 +18,7 @@ def expandBitlink(config):
     }
     r = requests.post("https://api-ssl.bitly.com/v4/expand", headers=headers, json=json).json()
     try:
-        print(f"Long Url: '{r['long_url']}'\n created at: '{r['created_at']}'\n with the ID '{r['id']}'")
+        print(f"Long Url: '{r['long_url']}' created at: '{r['created_at']}' with the ID '{r['id']}'")
     except KeyError:
         print("Something went wrong")
         print(r)
